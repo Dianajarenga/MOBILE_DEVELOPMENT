@@ -2,8 +2,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 fun main() {
-    //oddNums(2)
-   // oddNums(99)
+    oddNums(2)
+    oddNums(99)
     namesArray()
     servingRobot(6)
     servingRobot(5)
