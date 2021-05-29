@@ -1,57 +1,39 @@
+import java.time.temporal.TemporalAmount
+
 fun main() {
-
-    introduction("Diana", 21)
-    dispenser(2)
-    dispenser(14)
-    dispenser(22)
-   multiply(2,3)
-    add(7,8)
-    modulous(12,6)
+booklist()
+  var customer=CurrentAccount(2334,"Diana",10000000.00)
+    customer.deposit(50000.00)
+   print(customer)
+    customer.withdraw(40000.00)
 }
-fun introduction(name:String,age:Int){
-  println( "My name is $name and I am $age years old.")
+data class Book(var title:String,var author:String, var pages:Int)
+fun booklist():Book{
+    var book= mutableListOf(Book("Life","Jarenga",100),Book("style","Diana",200))
+   // book.reversed()
 
-
+return booklist()
 }
-fun dispenser(age:Int) {
-    if (age <= 6) {
-        println("milk")
-    }
-    if (age > 6 && age <= 15) {
-        println("fanta")
-    } else {
-        println("cocacola")
+class CurrentAccount(var accountNumber:Int,var accountName:String, var balance:Double,) {
+    fun deposit(amount: Double): Double {
+
+        var amount = balance + amount
+        return amount
+        print(amount)
     }
 
+    fun withdraw(amoun: Double): Double {
+        var amoun = balance - amoun
+        return amoun
+        print(amoun)
+    }
+
+    fun details() {
+        print("Account $accountNumber with balance $balance is operated by $accountName" )
+    }
 }
 
-
-
-open class Human(var name:String, age: Int, weight)
-
-
-fun multiply(num1:Int,num2:Int){
-    var product=num1*num2
-    println(product)
+class SavingsAccount( var accountNumber:Int,var accountName:String, var balance:Double ,var withdrawals:Int){
+    
 
 }
-fun add(num1: Int,num2: Int){
-    var add=num1+num2
-    println(add)
-
-}
-fun modulous(num1: Int,num2: Int){
-    var mod=num1%num2
-    println(mod)
-}
-
-
-
-//fun arrays( name:String):String{
-   // var namearray= arrayOf("Diana","Victor","Cynthia","Vee")
-    //for (name in namearray){
-
-   // if  (name in namearray<=4)
-
-
-
